@@ -64,7 +64,7 @@ After copying and compiling the C program to find data positions of sparse file 
 
 Now that we have the offsets of where data exists we can use our local version of dd to carve out the data. The skip value is the start of each section and the count values is the start position of the data subtracted by the end position. We also converted the hex data to decimal. 
 
-Example for the computing the offset of last data section within the file - 0xfffff708000 = 17,592,176,640,000:
+Example for computing the offset of last data section within the file - 0xfffff708000 = 17,592,176,640,000:
 ```bash
 big@ee6e73167aa0: ./dd if=/home/big/my_huge_file skip=17592176640000 bs=1 count=4096 >>outfin
 ```
