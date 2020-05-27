@@ -78,7 +78,7 @@ Archive:  p2
    skipping: project-files.zip       unsupported compression method 4671
 ```
 
-Now unzip failes and reports the compression method is unsupported. I convert decimal 4671 to hex 123F and search for it in the file. It takes me back to the PK ZIP header. The compression method field must be changed to the correct value. I check the spec sheet and determine '\x00\x00' represents no compression, so we replacce 123F with 0000. The byte pattern search also took us back to the End-of-central directory, so I edit its compression method field as well.
+Now unzip fails and reports the compression method is unsupported. I convert decimal 4671 to hex 123F and search for it in the file. It takes me back to the PK ZIP header. The compression method field must be changed to the correct value. I check the spec sheet and determine '\x00\x00' represents no compression, so we replacce 123F with 0000. The byte pattern search also took us back to the End-of-central directory, so I edit its compression method field as well.
 
 ![Image description](images/before-compress-edit.png)
 
